@@ -3,16 +3,22 @@
 #include <iostream>
 #include <algorithm>
 
-int d01_first_half()
-{
+bool getInput(std::string fileName, std::vector<int>& input) {
     std::vector<std::string> vecOfStr;
-
     auto result = getFileContent("d01input.txt", vecOfStr);
-
     if (result) {
-        std::vector<int> input;
         std::transform(vecOfStr.begin(), vecOfStr.end(), std::back_inserter(input),
             [](const std::string& str) -> int { return std::stoi(str); });
+    }
+    return result;
+}
+
+int d01_first_half()
+{
+    std::vector<int> input;
+    auto result = getInput("d01input.txt", input);
+
+    if (result) {
         const auto size = input.size();
         for (auto first = 0; first < size - 1; first++)
             for (auto second = first + 1; second < size; second++)
@@ -23,14 +29,10 @@ int d01_first_half()
 
 int d01_second_half()
 {
-    std::vector<std::string> vecOfStr;
-
-    auto result = getFileContent("d01input.txt", vecOfStr);
+    std::vector<int> input;
+    auto result = getInput("d01input.txt", input);
 
     if (result) {
-        std::vector<int> input;
-        std::transform(vecOfStr.begin(), vecOfStr.end(), std::back_inserter(input),
-            [](const std::string& str) -> int { return std::stoi(str); });
         const auto size = input.size();
         for (auto first = 0; first < size - 2; first++)
             for (auto second = first + 1; second < size - 1; second++)

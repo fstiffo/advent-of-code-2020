@@ -16,7 +16,7 @@ struct Line {
         return policy_num1 <= count && count <= policy_num2;
     }
     bool pw_is_valid_second() const {
-        return password[policy_num1-1] == policy_letter ^ password[policy_num2-1] == policy_letter;
+        return (password[policy_num1 - 1] == policy_letter) ^ (password[policy_num2 - 1] == policy_letter);
     }
     int policy_num1{};
     int policy_num2{};
@@ -39,19 +39,16 @@ int d02_first_half() {
     std::vector<Line> input;
     auto result = getInput("d02input.txt", input);
     auto count{ 0 };
-    for (const auto& l : input) 
-        if (l.pw_is_valid_first()) count++;
 
-    return count;
+    return std::count_if(input.begin(), input.end(),
+        [](const Line& l)->bool {return l.pw_is_valid_first(); });
 }
 
 int d02_second_half()
 {
     std::vector<Line> input;
     auto result = getInput("d02input.txt", input);
-    auto count{ 0 };
-    for (const auto& l : input) 
-        if (l.pw_is_valid_second()) count++;
-
-    return count;
+  
+    return std::count_if(input.begin(), input.end(),
+        [](const Line& l)->bool {return l.pw_is_valid_second(); });;
 }

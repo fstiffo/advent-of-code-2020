@@ -41,7 +41,7 @@ int d02_first_half() {
     auto count{ 0 };
 
     return std::count_if(input.begin(), input.end(),
-        [](const Line& l)->bool {return l.pw_is_valid_first(); });
+        [](const Line& l) -> bool {return l.pw_is_valid_first(); });
 }
 
 int d02_second_half()
@@ -50,5 +50,5 @@ int d02_second_half()
     auto result = getInput("d02input.txt", input);
   
     return std::count_if(input.begin(), input.end(),
-        [](const Line& l)->bool {return l.pw_is_valid_second(); });;
+        [](const Line& l) -> bool {return l.pw_is_valid_second(); });;
 }

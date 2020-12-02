@@ -38,7 +38,6 @@ bool getInput(std::string fileName, std::vector<Line>& input) {
 int d02_first_half() {
     std::vector<Line> input;
     auto result = getInput("d02input.txt", input);
-    auto count{ 0 };
 
     return std::count_if(input.begin(), input.end(),
         [](const Line& l) -> bool {return l.pw_is_valid_first(); });

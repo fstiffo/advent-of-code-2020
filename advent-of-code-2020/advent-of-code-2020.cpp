@@ -5,10 +5,12 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     std::cout << "Advent of Code\n   0xffff&2020\n" << std::endl;	
     std::cout << "--- Day 1: Report Repair---\nYour puzzle answer was " << d01_first_half() << std::endl;
     std::cout << "--- Part Two ---\nYour puzzle answer was " << d01_second_half() << std::endl;
+    std::cout << std::endl;
+    std::cout << "--- Day 2: Password Philosophy ---\nYour puzzle answer was " << d02_first_half() << std::endl;
+    std::cout << "--- Part Two ---\nYour puzzle answer was " << d02_second_half() << std::endl;
     return 0;
 }

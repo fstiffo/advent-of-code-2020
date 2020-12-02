@@ -5,7 +5,7 @@
 
 bool getInput(std::string fileName, std::vector<int>& input) {
     std::vector<std::string> vecOfStr;
-    auto result = getFileContent("d01input.txt", vecOfStr);
+    auto result = getFileContent(fileName, vecOfStr);
     if (result) {
         std::transform(vecOfStr.begin(), vecOfStr.end(), std::back_inserter(input),
             [](const std::string& str) -> int { return std::stoi(str); });
@@ -13,8 +13,7 @@ bool getInput(std::string fileName, std::vector<int>& input) {
     return result;
 }
 
-int d01_first_half()
-{
+int d01_first_half() {
     std::vector<int> input;
     auto result = getInput("d01input.txt", input);
 
@@ -27,8 +26,7 @@ int d01_first_half()
     return -1;
 }
 
-int d01_second_half()
-{
+int d01_second_half() {
     std::vector<int> input;
     auto result = getInput("d01input.txt", input);
 

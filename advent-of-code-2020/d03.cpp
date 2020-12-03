@@ -20,9 +20,14 @@ bool getInput(std::string fileName, map& input) {
     return result;
 }
 
-// pattern_width & pattern_height (pw & ph)
-// slope_right & slope_down (sr & sd)
-// x = (y * slope_right / slope_down) mod pattern_width
+// The pattern map of the problem can be projected on cilindrical discrete plane
+// where cilinder's height and perimeter are respectively pattern_height and pattern_width.
+// The movement happens on a line on a discrete plane.
+// The equation for a line starting at (0,0) in a cilindrical semi-infinite discrete plane is
+// x = y * slope mod cilinder_perimeter where x, y are integers, slope is a rational and 
+// y * slope is rounded to the nearest integer.
+// In our case slope = slope_right / slope_down and the path is not this line
+// but only the dots on this line with vertical coordinate multiple of down_slope (jumping).
 
 int d03_first_half() {
     map input;

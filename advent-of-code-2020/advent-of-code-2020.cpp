@@ -12,5 +12,9 @@ int main() {
     std::cout << std::endl;
     std::cout << "--- Day 2: Password Philosophy ---\nYour puzzle answer was " << d02_first_half() << std::endl;
     std::cout << "--- Part Two ---\nYour puzzle answer was " << d02_second_half() << std::endl;
+    std::cout << std::endl;
+    std::cout << "--- Day 3: Toboggan Trajectory ---\nYour puzzle answer was " << d03_first_half() << std::endl;
+    std::cout << "--- Part Two ---\nYour puzzle answer was " << d03_second_half() << std::endl;
+
     return 0;
 }
